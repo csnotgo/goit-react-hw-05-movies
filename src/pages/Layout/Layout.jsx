@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { HeaderBox, Link } from './Layout.styled';
 
@@ -8,7 +9,9 @@ const Layout = () => {
         <Link to={'/'}>Home</Link>
         <Link to={'movies'}>Movies</Link>
       </HeaderBox>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
